@@ -27,3 +27,5 @@ will bring everything back down.
 To make the metrics from kafka available for prometheus you need to expose them using the following docker image:
 
 docker run --name kafka-jmx-endpoint -d  -ti  -p 9308:9308 danielqsj/kafka-exporter  --kafka.server={DNSHOST}:9092
+
+Now in prometheus can you add this endpoint to the targets it scrapes from. I have added an example prometheus.yml file to the root of this project.
