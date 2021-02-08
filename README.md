@@ -23,3 +23,7 @@ docker-compose should pick up the envar automatically from the .env file.
 docker-compose down
 
 will bring everything back down.
+
+To make the metrics from kafka available for prometheus you need to expose them using the following docker image:
+
+docker run --name kafka-jmx-endpoint -d  -ti  -p 9308:9308 danielqsj/kafka-exporter  --kafka.server={DNSHOST}:9092
